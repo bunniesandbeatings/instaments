@@ -1,0 +1,47 @@
+<objdefs appVersion="1.0.12">
+   <obj.normal id="cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b">
+      <sDescription>Display Midi CC information for debugging. Compact display
+Based off Johannes Taelman&apos;s factory code for timer/pulselength amongst other things.</sDescription>
+      <author>Rasheed Abdul-Aziz</author>
+      <license>MIT</license>
+      <helpPatch></helpPatch>
+      <inlets>
+         <frac32.positive name="in"/>
+         <int32 name="ini" description="Integer CC"/>
+         <bool32.rising name="trig"/>
+      </inlets>
+      <outlets/>
+      <displays>
+         <frac32.u.dial name="frac" description="Fractional Display" noLabel="true"/>
+         <int32.label name="int" description="Integer Display"/>
+         <bool32 name="trig" description="Trigger Display"/>
+      </displays>
+      <params/>
+      <attribs/>
+      <code.declaration><![CDATA[int32_t val;
+int ntrig;]]></code.declaration>
+      <code.init><![CDATA[val = 0;
+ntrig = 0;]]></code.init>
+      <code.krate><![CDATA[disp_frac=inlet_in;
+disp_int=inlet_ini;
+
+const int32_t t = 100;
+
+if ((inlet_trig > 0) && !ntrig) {
+  val = 1 << 16;
+  ntrig = 1;
+  disp_trig = 1;
+} else {
+  if (!(inlet_trig > 0)) {
+    ntrig = 0;
+  }
+  if (val>0) {
+    val -= t;
+    if (val<=0) 
+      disp_trig = 0;
+    else
+      disp_trig = 1;
+  } else disp_trig = 0;
+}]]></code.krate>
+   </obj.normal>
+</objdefs>

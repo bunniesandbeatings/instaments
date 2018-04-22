@@ -1,0 +1,688 @@
+<patch-1.0 appVersion="1.0.12">
+   <comment type="patch/comment" x="28" y="14" text="Debug                                                                                                "/>
+   <comment type="patch/comment" x="616" y="14" text="TODO:"/>
+   <comment type="patch/comment" x="644" y="28" text="Control Rotary MCU"/>
+   <obj type="midi/in/monitor" uuid="b51863ca-6afa-4d29-acfd-c8c2fe06cb16" name="monitor_1" x="210" y="42">
+      <params>
+         <bool32.tgl name="ControlChange" value="0"/>
+         <bool32.tgl name="Note" value="0"/>
+         <bool32.tgl name="ProgramChange" value="0"/>
+         <bool32.tgl name="Bend" value="0"/>
+         <bool32.tgl name="PolyPressure" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="644" y="42" text="Control Pattern Radio MCU"/>
+   <comment type="patch/comment" x="14" y="252" text="Control Pattern Select MCU                                                                                                                          "/>
+   <comment type="patch/comment" x="630" y="252" text="Control Pattern Toggle MCU [TBD]                                                                                                                         "/>
+   <obj type="controllers/BeatStep Pro/control_mcu_pattern_select" uuid="dd337357-5956-4d78-a839-15911c5d01e2" name="control_mcu_pattern_select_1" x="28" y="280">
+      <params/>
+      <attribs>
+         <spinner attributeName="min" value="0"/>
+         <spinner attributeName="max" value="7"/>
+      </attribs>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_3" x="350" y="280">
+      <params>
+         <int32 name="maximum" value="100"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Trigger count" x="462" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Pattern Number" x="518" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="seq/binary pattern" uuid="b39640f7-0f9a-494c-968e-b542a692fc75" name="Source of truth (eg a saved patch)" x="630" y="280">
+      <params>
+         <bin16 name="pattern" value="64211"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="Enable" x="826" y="280">
+      <params>
+         <bool32.tgl name="b" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="controllers/BeatStep Pro/control_mcu_pattern" uuid="2a4864b3-6018-4ed9-8101-592b53f97ae8" name="control_mcu_pattern_1" x="924" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_6" x="1176" y="280">
+      <params>
+         <int32 name="maximum" value="100"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Trigger Test" x="1260" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/pattern 16" uuid="e4211cbe-4347-4098-9f9f-79d90e1997b0" name="pattern_1" x="1246" y="350">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_4" x="350" y="406">
+      <params>
+         <int32 name="maximum" value="100"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Left" x="462" y="406">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Right" x="518" y="406">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="controllers/BeatStep Pro/control_mcu_pattern_select_lr" uuid="4744214e-4a86-4efa-8cba-a2188fbe3915" name="control_mcu_pattern_select_lr_1" x="28" y="420">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_5" x="350" y="476">
+      <params>
+         <int32 name="maximum" value="100"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="14" y="574" text="Control Rotary CC                                                                                                                                                                                                             "/>
+   <obj type="controllers/bsp/control_cc_rotary" uuid="2f774266-65db-457f-a242-6eadf8c3896a" name="obj_2" x="14" y="602">
+      <params/>
+      <attribs>
+         <combo attributeName="midichannel" selection="inherit"/>
+         <combo attributeName="mididevice" selection="omni"/>
+         <combo attributeName="midiport" selection="omni"/>
+      </attribs>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_1" x="238" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_2" x="294" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_3" x="350" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_4" x="406" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_5" x="476" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_6" x="532" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_7" x="588" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_8" x="644" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_9" x="238" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_10" x="294" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_11" x="350" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_12" x="406" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_13" x="476" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_14" x="532" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_15" x="588" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_16" x="644" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="14" y="1386" text="Drum Pads                                                                                                                                                                                                     "/>
+   <obj type="controllers/bsp/drum_pads" uuid="6389f3dc-67e7-4d89-a28d-b5b6007fe48e" name="obj_1" x="14" y="1414">
+      <params/>
+      <attribs>
+         <combo attributeName="midichannel" selection="inherit"/>
+         <combo attributeName="mididevice" selection="omni"/>
+         <combo attributeName="midiport" selection="omni"/>
+      </attribs>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_9" x="210" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_9" x="280" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_10" x="350" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_10" x="420" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_11" x="490" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_11" x="560" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_12" x="630" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_12" x="700" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_13" x="770" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_13" x="840" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_14" x="910" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_14" x="980" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_15" x="1050" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_15" x="1120" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_16" x="1190" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_16" x="1260" y="1414">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="210" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_1" x="280" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_2" x="350" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_2" x="420" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_3" x="490" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_3" x="560" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_4" x="630" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_4" x="700" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_5" x="770" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_5" x="840" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_6" x="910" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_6" x="980" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_7" x="1050" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_7" x="1120" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_8" x="1190" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_8" x="1260" y="1582">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="obj_1" outlet="PAD 1 Trigger"/>
+         <dest obj="bool_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 1 Velocity"/>
+         <dest obj="vbar_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 2 Trigger"/>
+         <dest obj="bool_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 2 Velocity"/>
+         <dest obj="vbar_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 3 Trigger"/>
+         <dest obj="bool_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 3 Velocity"/>
+         <dest obj="vbar_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 4 Trigger"/>
+         <dest obj="bool_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 4 Velocity"/>
+         <dest obj="vbar_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 5 Trigger"/>
+         <dest obj="bool_5" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 5 Velocity"/>
+         <dest obj="vbar_5" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 6 Trigger"/>
+         <dest obj="bool_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 6 Velocity"/>
+         <dest obj="vbar_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 7 Trigger"/>
+         <dest obj="bool_7" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 7 Velocity"/>
+         <dest obj="vbar_7" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 8 Trigger"/>
+         <dest obj="bool_8" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 8 Velocity"/>
+         <dest obj="vbar_8" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 9 Trigger"/>
+         <dest obj="bool_9" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 9 Velocity"/>
+         <dest obj="vbar_9" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 10 Trigger"/>
+         <dest obj="bool_10" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 10 Velocity"/>
+         <dest obj="vbar_10" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 11 Trigger"/>
+         <dest obj="bool_11" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 11 Velocity"/>
+         <dest obj="vbar_11" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 12 Trigger"/>
+         <dest obj="bool_12" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 12 Velocity"/>
+         <dest obj="vbar_12" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 13 Trigger"/>
+         <dest obj="bool_13" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 13 Velocity"/>
+         <dest obj="vbar_13" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 14 Trigger"/>
+         <dest obj="bool_14" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 14 Velocity"/>
+         <dest obj="vbar_14" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 15 Trigger"/>
+         <dest obj="bool_15" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 15 Velocity"/>
+         <dest obj="vbar_15" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 16 Trigger"/>
+         <dest obj="bool_16" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="PAD 16 Velocity"/>
+         <dest obj="vbar_16" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 1"/>
+         <dest obj="cc_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 1 i"/>
+         <dest obj="cc_1" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 1 trig"/>
+         <dest obj="cc_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 2"/>
+         <dest obj="cc_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 2 i"/>
+         <dest obj="cc_2" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 2 trig"/>
+         <dest obj="cc_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 3"/>
+         <dest obj="cc_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 3 i"/>
+         <dest obj="cc_3" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 3 trig"/>
+         <dest obj="cc_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 4"/>
+         <dest obj="cc_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 4 i"/>
+         <dest obj="cc_4" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 4 trig"/>
+         <dest obj="cc_4" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 5"/>
+         <dest obj="cc_5" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 5 i"/>
+         <dest obj="cc_5" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 5 trig"/>
+         <dest obj="cc_5" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 6"/>
+         <dest obj="cc_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 6 i"/>
+         <dest obj="cc_6" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 6 trig"/>
+         <dest obj="cc_6" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 7"/>
+         <dest obj="cc_7" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 7 i"/>
+         <dest obj="cc_7" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 7 trig"/>
+         <dest obj="cc_7" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 8"/>
+         <dest obj="cc_8" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 8 i"/>
+         <dest obj="cc_8" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 8 trig"/>
+         <dest obj="cc_8" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 9"/>
+         <dest obj="cc_9" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 9 i"/>
+         <dest obj="cc_9" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 9 trig"/>
+         <dest obj="cc_9" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 10"/>
+         <dest obj="cc_10" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 10 i"/>
+         <dest obj="cc_10" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 10 trig"/>
+         <dest obj="cc_10" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 11"/>
+         <dest obj="cc_11" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 11 i"/>
+         <dest obj="cc_11" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 11 trig"/>
+         <dest obj="cc_11" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 12"/>
+         <dest obj="cc_12" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 12 i"/>
+         <dest obj="cc_12" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 12 trig"/>
+         <dest obj="cc_12" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 13"/>
+         <dest obj="cc_13" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 13 i"/>
+         <dest obj="cc_13" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 13 trig"/>
+         <dest obj="cc_13" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 14"/>
+         <dest obj="cc_14" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 14 i"/>
+         <dest obj="cc_14" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 14 trig"/>
+         <dest obj="cc_14" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 15"/>
+         <dest obj="cc_15" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 15 i"/>
+         <dest obj="cc_15" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 15 trig"/>
+         <dest obj="cc_15" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 16"/>
+         <dest obj="cc_16" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 16 i"/>
+         <dest obj="cc_16" inlet="ini"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="Rotary 16 trig"/>
+         <dest obj="cc_16" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_select_1" outlet="pattern"/>
+         <dest obj="Pattern Number" inlet="in"/>
+      </net>
+      <net>
+         <source obj="counter_3" outlet="o"/>
+         <dest obj="Trigger count" inlet="in"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_select_1" outlet="trig"/>
+         <dest obj="counter_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_select_lr_1" outlet="left"/>
+         <dest obj="counter_4" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_select_lr_1" outlet="right"/>
+         <dest obj="counter_5" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="counter_4" outlet="o"/>
+         <dest obj="Left" inlet="in"/>
+      </net>
+      <net>
+         <source obj="counter_5" outlet="o"/>
+         <dest obj="Right" inlet="in"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_1" outlet="state"/>
+         <dest obj="pattern_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="counter_6" outlet="o"/>
+         <dest obj="Trigger Test" inlet="in"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_1" outlet="changed"/>
+         <dest obj="counter_6" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="Enable" outlet="o"/>
+         <dest obj="control_mcu_pattern_1" inlet="enabled"/>
+      </net>
+      <net>
+         <source obj="Source of truth (eg a saved patch)" outlet="val"/>
+         <dest obj="control_mcu_pattern_1" inlet="state"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+      <MidiChannel>1</MidiChannel>
+      <NPresets>8</NPresets>
+      <NPresetEntries>32</NPresetEntries>
+      <NModulationSources>8</NModulationSources>
+      <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>1120</x>
+      <y>138</y>
+      <width>1351</width>
+      <height>1156</height>
+   </windowPos>
+</patch-1.0>

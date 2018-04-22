@@ -1,0 +1,51 @@
+<objdefs appVersion="1.0.12">
+   <obj.normal id="pattern 16" uuid="e4211cbe-4347-4098-9f9f-79d90e1997b0">
+      <sDescription>Display pattern embedded in an int. Chain 2 (max) for a 32 bit pattern</sDescription>
+      <author>Rasheed Abdul-Aziz</author>
+      <license>MIT</license>
+      <helpPatch></helpPatch>
+      <inlets>
+         <int32.positive name="in" description="input"/>
+      </inlets>
+      <outlets>
+         <int32.positive name="chain_out" description="chain output"/>
+      </outlets>
+      <displays>
+         <bool32 name="d1"/>
+         <bool32 name="d2"/>
+         <bool32 name="d3"/>
+         <bool32 name="d4"/>
+         <bool32 name="d5"/>
+         <bool32 name="d6"/>
+         <bool32 name="d7"/>
+         <bool32 name="d8"/>
+         <bool32 name="d9"/>
+         <bool32 name="d10"/>
+         <bool32 name="d11"/>
+         <bool32 name="d12"/>
+         <bool32 name="d13"/>
+         <bool32 name="d14"/>
+         <bool32 name="d15"/>
+         <bool32 name="d16"/>
+      </displays>
+      <params/>
+      <attribs/>
+      <code.krate><![CDATA[disp_d1 = inlet_in & 0b1;
+disp_d2 = inlet_in & 0b10;
+disp_d3 = inlet_in & 0b100;
+disp_d4 = inlet_in & 0b1000;
+disp_d5 = inlet_in & 0b10000;
+disp_d6 = inlet_in & 0b100000;
+disp_d7 = inlet_in & 0b1000000;
+disp_d8 = inlet_in & 0b10000000;
+disp_d9 = inlet_in & 0b100000000;
+disp_d10 = inlet_in & 0b1000000000;
+disp_d11 = inlet_in & 0b10000000000;
+disp_d12 = inlet_in & 0b100000000000;
+disp_d13 = inlet_in & 0b1000000000000;
+disp_d14 = inlet_in & 0b10000000000000;
+disp_d15 = inlet_in & 0b100000000000000;
+disp_d16 = inlet_in & 0b1000000000000000;
+outlet_chain__out = inlet_in>>16;]]></code.krate>
+   </obj.normal>
+</objdefs>

@@ -1,0 +1,17 @@
+<objdefs appVersion="1.0.12">
+   <obj.normal id="binary pattern" uuid="b39640f7-0f9a-494c-968e-b542a692fc75">
+      <sDescription>Binary 16 bit pattern output as an int.</sDescription>
+      <author>Rasheed Abdul-Aziz</author>
+      <license>MIT</license>
+      <inlets/>
+      <outlets>
+         <int32.positive name="val" description=""/>
+      </outlets>
+      <displays/>
+      <params>
+         <bin16 name="pattern" noLabel="true"/>
+      </params>
+      <attribs/>
+      <code.krate><![CDATA[outlet_val = param_pattern;]]></code.krate>
+   </obj.normal>
+</objdefs>
