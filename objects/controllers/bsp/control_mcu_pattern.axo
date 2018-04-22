@@ -1,5 +1,5 @@
 <objdefs appVersion="1.0.12">
-   <obj.normal id="control_mcu_pattern" uuid="2a4864b3-6018-4ed9-8101-592b53f97ae8">
+   <obj.normal id="control_mcu_pattern" uuid="023abb56-5505-478c-80db-3acbae66a200">
       <sDescription>BeatStepPro Pattern Row Button as toggle, Control Instrument, in MCU mode;
 
 This will only illuminate the patterns if you connect the BSP over the USB host header, because it must operate on the BSP&apos;s second Midi Port.</sDescription>
@@ -28,12 +28,13 @@ uint8_t velocity;
 uint8_t note;
 uint8_t stateUpdated;
 uint32_t pad;
-uint32_t lastInletState;]]></code.declaration>
+uint32_t lastInletState;
+uint32_t lastInletEnabled;]]></code.declaration>
       <code.init><![CDATA[state = 0;
 stateUpdated = 1;
-lastInletState = 0;]]></code.init>
+lastInletState = 0;
+lastInletEnabled = 0;]]></code.init>
       <code.krate><![CDATA[if (inlet_enabled && (lastInletState != inlet_state)) {
-	LogTextMessage("Inlet Changed");
 	lastInletState = inlet_state;
 	state = inlet_state;
 	stateUpdated = 1;
@@ -51,13 +52,15 @@ if (lastNote) {
 		outlet_changed = 1;
 	}
 	lastNote = 0;
-} else if (stateUpdated && inlet_enabled) {
+} else if ((stateUpdated || (lastInletEnabled == 0)) && inlet_enabled) {
 	stateUpdated = 0;
 	for (note = 8; note < 24; note++ ) {
 		velocity = (state & padLookup[note]) ? 127 : 0;
 		MidiSend3(MIDI_DEVICE_USB_HOST,0x02,MIDI_NOTE_ON,note, velocity);
 	}
-}]]></code.krate>
+}
+
+lastInletEnabled = inlet_enabled;]]></code.krate>
       <code.midihandler><![CDATA[// implicit, midi channel 1 - MCU mode is always channel 1 
 // Also, Pattern step select is always NoteOn, with velocity of 0 meaning release/up, and 127 meaning press/down
 

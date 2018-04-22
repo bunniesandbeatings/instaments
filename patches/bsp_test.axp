@@ -1,7 +1,7 @@
 <patch-1.0 appVersion="1.0.12">
    <comment type="patch/comment" x="28" y="14" text="Debug                                                                                                "/>
-   <comment type="patch/comment" x="616" y="14" text="TODO:"/>
-   <comment type="patch/comment" x="644" y="28" text="Control Rotary MCU"/>
+   <comment type="patch/comment" x="630" y="14" text="Control Pattern Select MCU                                                                                                                          "/>
+   <comment type="patch/comment" x="42" y="42" text="TODO:"/>
    <obj type="midi/in/monitor" uuid="b51863ca-6afa-4d29-acfd-c8c2fe06cb16" name="monitor_1" x="210" y="42">
       <params>
          <bool32.tgl name="ControlChange" value="0"/>
@@ -12,86 +12,147 @@
       </params>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="644" y="42" text="Control Pattern Radio MCU"/>
-   <comment type="patch/comment" x="14" y="252" text="Control Pattern Select MCU                                                                                                                          "/>
-   <comment type="patch/comment" x="630" y="252" text="Control Pattern Toggle MCU [TBD]                                                                                                                         "/>
-   <obj type="controllers/BeatStep Pro/control_mcu_pattern_select" uuid="dd337357-5956-4d78-a839-15911c5d01e2" name="control_mcu_pattern_select_1" x="28" y="280">
+   <obj type="controllers/bsp/control_mcu_pattern_select" uuid="dd337357-5956-4d78-a839-15911c5d01e2" name="control_mcu_pattern_select_1" x="630" y="42">
       <params/>
       <attribs>
          <spinner attributeName="min" value="0"/>
          <spinner attributeName="max" value="7"/>
       </attribs>
    </obj>
-   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_3" x="350" y="280">
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_3" x="952" y="42">
       <params>
          <int32 name="maximum" value="100"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Trigger count" x="462" y="280">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Trigger count" x="1064" y="42">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Pattern Number" x="518" y="280">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Pattern Number" x="1120" y="42">
       <params/>
       <attribs/>
    </obj>
-   <obj type="seq/binary pattern" uuid="b39640f7-0f9a-494c-968e-b542a692fc75" name="Source of truth (eg a saved patch)" x="630" y="280">
+   <comment type="patch/comment" x="70" y="56" text="Control Rotary MCU"/>
+   <comment type="patch/comment" x="70" y="70" text="Control Pattern Radio MCU"/>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_4" x="952" y="140">
+      <params>
+         <int32 name="maximum" value="100"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Left" x="1064" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Right" x="1120" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="controllers/BeatStep Pro/control_mcu_pattern_select_lr" uuid="4744214e-4a86-4efa-8cba-a2188fbe3915" name="control_mcu_pattern_select_lr_1" x="630" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_5" x="952" y="210">
+      <params>
+         <int32 name="maximum" value="100"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="14" y="294" text="Control Pattern Toggle MCU [TBD]                                                                                                                         "/>
+   <comment type="patch/comment" x="14" y="322" text="Setting state example"/>
+   <comment type="patch/comment" x="770" y="322" text="Paging example"/>
+   <obj type="ctrl/binary pattern" uuid="b39640f7-0f9a-494c-968e-b542a692fc75" name="Source of truth (eg a saved patch)" x="14" y="336">
       <params>
          <bin16 name="pattern" value="64211"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="Enable" x="826" y="280">
+   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="Enable" x="210" y="336">
       <params>
          <bool32.tgl name="b" value="1"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="controllers/BeatStep Pro/control_mcu_pattern" uuid="2a4864b3-6018-4ed9-8101-592b53f97ae8" name="control_mcu_pattern_1" x="924" y="280">
+   <obj type="controllers/bsp/control_mcu_pattern" uuid="023abb56-5505-478c-80db-3acbae66a200" name="control_mcu_pattern_1" x="308" y="336">
       <params/>
       <attribs/>
    </obj>
-   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_6" x="1176" y="280">
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_6" x="560" y="336">
       <params>
          <int32 name="maximum" value="100"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Trigger Test" x="1260" y="280">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Trigger Test" x="644" y="336">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/pattern 16" uuid="e4211cbe-4347-4098-9f9f-79d90e1997b0" name="pattern_1" x="1246" y="350">
+   <obj type="controllers/bsp/control_mcu_pattern_select" uuid="dd337357-5956-4d78-a839-15911c5d01e2" name="control_mcu_pattern_select_2" x="770" y="336">
+      <params/>
+      <attribs>
+         <spinner attributeName="min" value="0"/>
+         <spinner attributeName="max" value="3"/>
+      </attribs>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Pattern Selected" x="1050" y="350">
       <params/>
       <attribs/>
    </obj>
-   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_4" x="350" y="406">
-      <params>
-         <int32 name="maximum" value="100"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Left" x="462" y="406">
+   <obj type="disp/pattern 16" uuid="e4211cbe-4347-4098-9f9f-79d90e1997b0" name="pattern_1" x="630" y="406">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="Right" x="518" y="406">
+   <obj type="logic/decode/int 4" uuid="a9b111f292909123d27b4cda86d43c5fb9f9f17c" name="int_1" x="784" y="448">
       <params/>
       <attribs/>
    </obj>
-   <obj type="controllers/BeatStep Pro/control_mcu_pattern_select_lr" uuid="4744214e-4a86-4efa-8cba-a2188fbe3915" name="control_mcu_pattern_select_lr_1" x="28" y="420">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_17" x="1022" y="504">
       <params/>
       <attribs/>
    </obj>
-   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_5" x="350" y="476">
-      <params>
-         <int32 name="maximum" value="100"/>
-      </params>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_18" x="1106" y="504">
+      <params/>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="14" y="574" text="Control Rotary CC                                                                                                                                                                                                             "/>
-   <obj type="controllers/bsp/control_cc_rotary" uuid="2f774266-65db-457f-a242-6eadf8c3896a" name="obj_2" x="14" y="602">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_19" x="1190" y="504">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_20" x="1274" y="504">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="controllers/bsp/control_mcu_pattern" uuid="023abb56-5505-478c-80db-3acbae66a200" name="control_mcu_pattern_2" x="784" y="560">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/pattern 16" uuid="e4211cbe-4347-4098-9f9f-79d90e1997b0" name="Pattern 1" x="1022" y="560">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/pattern 16" uuid="e4211cbe-4347-4098-9f9f-79d90e1997b0" name="Pattern 2" x="1106" y="560">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/pattern 16" uuid="e4211cbe-4347-4098-9f9f-79d90e1997b0" name="Pattern 3" x="1190" y="560">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/pattern 16" uuid="e4211cbe-4347-4098-9f9f-79d90e1997b0" name="Pattern 4" x="1274" y="560">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="controllers/bsp/control_mcu_pattern" uuid="023abb56-5505-478c-80db-3acbae66a200" name="control_mcu_pattern_3" x="784" y="616">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="controllers/bsp/control_mcu_pattern" uuid="023abb56-5505-478c-80db-3acbae66a200" name="control_mcu_pattern_4" x="784" y="672">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="14" y="686" text="Control Rotary CC                                                                                                                                                                                                             "/>
+   <obj type="controllers/bsp/control_cc_rotary" uuid="2f774266-65db-457f-a242-6eadf8c3896a" name="obj_2" x="14" y="714">
       <params/>
       <attribs>
          <combo attributeName="midichannel" selection="inherit"/>
@@ -99,72 +160,76 @@
          <combo attributeName="midiport" selection="omni"/>
       </attribs>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_1" x="238" y="602">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_1" x="238" y="714">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_2" x="294" y="602">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_2" x="294" y="714">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_3" x="350" y="602">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_3" x="350" y="714">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_4" x="406" y="602">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_4" x="406" y="714">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_5" x="476" y="602">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_5" x="476" y="714">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_6" x="532" y="602">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_6" x="532" y="714">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_7" x="588" y="602">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_7" x="588" y="714">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_8" x="644" y="602">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_8" x="644" y="714">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_9" x="238" y="742">
+   <obj type="controllers/bsp/control_mcu_pattern" uuid="023abb56-5505-478c-80db-3acbae66a200" name="control_mcu_pattern_5" x="784" y="728">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_10" x="294" y="742">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_9" x="238" y="854">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_11" x="350" y="742">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_10" x="294" y="854">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_12" x="406" y="742">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_11" x="350" y="854">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_13" x="476" y="742">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_12" x="406" y="854">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_14" x="532" y="742">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_13" x="476" y="854">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_15" x="588" y="742">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_14" x="532" y="854">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_16" x="644" y="742">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_15" x="588" y="854">
       <params/>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="14" y="1386" text="Drum Pads                                                                                                                                                                                                     "/>
-   <obj type="controllers/bsp/drum_pads" uuid="6389f3dc-67e7-4d89-a28d-b5b6007fe48e" name="obj_1" x="14" y="1414">
+   <obj type="disp/cc" uuid="897a314d-38c9-4af9-beef-b57f4c20d45b" name="cc_16" x="644" y="854">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="14" y="1484" text="Drum Pads                                                                                                                                                                                                     "/>
+   <obj type="controllers/bsp/drum_pads" uuid="6389f3dc-67e7-4d89-a28d-b5b6007fe48e" name="obj_1" x="14" y="1512">
       <params/>
       <attribs>
          <combo attributeName="midichannel" selection="inherit"/>
@@ -172,131 +237,131 @@
          <combo attributeName="midiport" selection="omni"/>
       </attribs>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_9" x="210" y="1414">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_9" x="210" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_9" x="280" y="1414">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_9" x="280" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_10" x="350" y="1414">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_10" x="350" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_10" x="420" y="1414">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_10" x="420" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_11" x="490" y="1414">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_11" x="490" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_11" x="560" y="1414">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_11" x="560" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_12" x="630" y="1414">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_12" x="630" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_12" x="700" y="1414">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_12" x="700" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_13" x="770" y="1414">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_13" x="770" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_13" x="840" y="1414">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_13" x="840" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_14" x="910" y="1414">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_14" x="910" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_14" x="980" y="1414">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_14" x="980" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_15" x="1050" y="1414">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_15" x="1050" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_15" x="1120" y="1414">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_15" x="1120" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_16" x="1190" y="1414">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_16" x="1190" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_16" x="1260" y="1414">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_16" x="1260" y="1512">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="210" y="1582">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="210" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_1" x="280" y="1582">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_1" x="280" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_2" x="350" y="1582">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_2" x="350" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_2" x="420" y="1582">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_2" x="420" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_3" x="490" y="1582">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_3" x="490" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_3" x="560" y="1582">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_3" x="560" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_4" x="630" y="1582">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_4" x="630" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_4" x="700" y="1582">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_4" x="700" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_5" x="770" y="1582">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_5" x="770" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_5" x="840" y="1582">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_5" x="840" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_6" x="910" y="1582">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_6" x="910" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_6" x="980" y="1582">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_6" x="980" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_7" x="1050" y="1582">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_7" x="1050" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_7" x="1120" y="1582">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_7" x="1120" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_8" x="1190" y="1582">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_8" x="1190" y="1680">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_8" x="1260" y="1582">
+   <obj type="disp/vbar" uuid="b529b8ea300b5858b0213ec07f522a0c4d84500d" name="vbar_8" x="1260" y="1680">
       <params/>
       <attribs/>
    </obj>
@@ -669,6 +734,47 @@
          <source obj="Source of truth (eg a saved patch)" outlet="val"/>
          <dest obj="control_mcu_pattern_1" inlet="state"/>
       </net>
+      <net>
+         <source obj="control_mcu_pattern_select_2" outlet="pattern"/>
+         <dest obj="Pattern Selected" inlet="in"/>
+         <dest obj="int_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="int_1" outlet="o0"/>
+         <dest obj="bool_17" inlet="in"/>
+         <dest obj="control_mcu_pattern_2" inlet="enabled"/>
+      </net>
+      <net>
+         <source obj="int_1" outlet="o1"/>
+         <dest obj="bool_18" inlet="in"/>
+         <dest obj="control_mcu_pattern_3" inlet="enabled"/>
+      </net>
+      <net>
+         <source obj="int_1" outlet="o2"/>
+         <dest obj="bool_19" inlet="in"/>
+         <dest obj="control_mcu_pattern_4" inlet="enabled"/>
+      </net>
+      <net>
+         <source obj="int_1" outlet="o3"/>
+         <dest obj="bool_20" inlet="in"/>
+         <dest obj="control_mcu_pattern_5" inlet="enabled"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_2" outlet="state"/>
+         <dest obj="Pattern 1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_3" outlet="state"/>
+         <dest obj="Pattern 2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_4" outlet="state"/>
+         <dest obj="Pattern 3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="control_mcu_pattern_5" outlet="state"/>
+         <dest obj="Pattern 4" inlet="in"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
@@ -680,9 +786,9 @@
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>1120</x>
+      <x>900</x>
       <y>138</y>
-      <width>1351</width>
+      <width>1658</width>
       <height>1156</height>
    </windowPos>
 </patch-1.0>
